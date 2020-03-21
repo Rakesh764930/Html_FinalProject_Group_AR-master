@@ -1,0 +1,26 @@
+body{
+
+  font-family: Times;
+}
+img{
+  float: left;
+}
+aside{
+float: left;
+margin-left: 0.2%;
+color: blue;
+}
+h1{
+  
+  background: yellow;
+  width: 300px;
+}
+p{
+  color: green;
+}
+aside ul{
+  margin-top: 10px;
+}
+aside ul li{
+  margin-top: 2px;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="css/contactUs.css">
+    <link rel="stylesheet" href="css/home.css">
+
+
+    <!--bootstrap reference from https://getbootstrap.com/docs/4.4/getting-started/introduction/-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name= "viewport" content="width=device-width , initial-scale=1.0">
+    <title> About Us </title>
+  </head>
+  <body >
+    <div class="container-fluid">
+
+      <div class="top-bar">
+        <div class="row">
+          <ul class="list-group list-group-horizontal" id="signList">
+
+            <li class="list-group-item"><a href="login.html">Sign In</a></li>
+            <li class="list-group-item"><a href="myList.html">My List</a></li>
+          </ul>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuItems" aria-controls="secondNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuItems">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" > <a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"> <div class="dropdown">
+              <!-- service submenu -->
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="hotels.html" style="color: black">Book  Hotels </a>
+                <a class="dropdown-item" href="flights.html" style="color: black">Book Flights</a>
+              </div>
+            </div></li>
+            <li class="nav-item"> <a class="nav-link" href="aboutUs.html">About us</a></li>
+            <li class="nav-item"> <a class="nav-link" href="contactUs.html">Contact us</a></li>
+
+          </ul>
+        </div>
+      </nav>
+
+      <section class="my-5">
+
+        <h2 class="h1-responsive font-weight-bold text-center my-5">Feel free to get in touch with us</h2>
+        <div class="row">
+          <div class="col-lg-5 mb-lg-0 mb-4">
+            <div class="card">
+              <div class="card-body">
+
+                <div class="form-header blue accent-1">
+                  <h3 class="mt-2"> Write to us:</h3>
+                  <p>Fill out this form to let us know how are we doing:</p>
+                </div><br>
+
+
+                <div class="md-form">
+                  <label for="form-name">Firstname:</label>
+                  <input type="text" id="form-name" class="form-control" required>
+
+                </div>
+                <div class="md-form">
+                  <label for="form-name">LastName:</label>
+                  <input type="text" id="form-name" class="form-control" required>
+
+                </div>
+                <div class="md-form">
+                    <label for="form-email">Email address:</label>
+                  <input type="text" id="form-email" class="form-control" required>
+
+                </div>
+                <div class="md-form">
+                  <label for="form-Subject">Subject:</label>
+                  <input type="text" id="form-Subject" class="form-control" required>
+
+                </div>
+                <div class="md-form">
+                  <label for="form-text">Message/Suggestions</label>
+                  <textarea id="form-text" class="form-control md-textarea" rows="3" required></textarea>
+
+                </div><br>
+                <div class="text-center">
+                <a href="#" class="btn btn-outline-warning">Submit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+
+            <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 400px">
+              <iframe src="https://maps.google.com/maps?q=41GaietyDrive,Scarborough&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                style="border:0" allowfullscreen></iframe>
+            </div>
+
+            <div class="row text-center" >
+              <div class="col-md-4">
+                <p>Address:</p>
+                <p>41 Gaiety Drive</p>
+
+                <p>Scarborough, ON M1H 1B9</p>
+                <p class="mb-md-0">CANADA</p>
+              </div>
+              <div class="col-md-4">
+
+                <p>Office Timings:</p>
+                <p class="mb-md-0">Mon - Fri, 9:00 AM-6:00PM <br>Saturdays, 10:00 AM-3:00PM <br>Sunday - Off
+                </p>
+              </div>
+              <div class="col-md-4">
+                <p>Contacts:</p>
+              <p>Phone:(+1)437-647-7389</p>
+                <p>email@:rakeshajeet@123.com</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<footer> follow us on :
+      <a href="https://www.facebook.com/rakeshkumar" class="fa fa-facebook"></a>
+      <a href="https://www.twitter.com/@rakesh25948380" class="fa fa-twitter"></a>
+      <a href="https://www.linkedin.com/in/rakesh-kumar-na-b20b45194/" class="fa fa-linkedin"></a>
+      <a href="https://www.instagram.com/?hl=en" class="fa fa-instagram"></a><br>
+      &copy; Copyright 2020. All Rights Reserved.<br>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/3d7be19efc.js"></script>
+
+<script type="text/javascript">
+  function submitFunc(){
+    alert("Your message is received !! Thank you for contacting us. We will get back to you soon !!")
+  }
+</script>
+  </body>
+</html>

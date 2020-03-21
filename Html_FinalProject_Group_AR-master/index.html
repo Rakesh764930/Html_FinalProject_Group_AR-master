@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name= "viewport" content="width=device-width , initial-scale=1.0">
+    <title> Lets Travel </title>
+
+  </head>
+  <body >
+    <div class="container-fluid">
+
+      <div class="top-bar">
+        <div class="row">
+          <ul class="list-group list-group-horizontal" id="signList">
+
+            <li id="signin" class="list-group-item"><a href="login.html">Sign In</a></li>
+            <li id="mylist" class="list-group-item"><a href="myList.html">My List</a></li>
+            <li id="signout" class="list-group-item"><a href="index.html" onclick="signOut()">Sign Out</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuItems" aria-controls="secondNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuItems">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" > <a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"> <a class="nav-link" href="aboutUs.html">About us</a></li>
+
+            <li class="nav-item"> <div class="dropdown">
+              <!-- service submenu -->
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="hotels.html" style="color: black">Book  Hotels </a>
+                <a class="dropdown-item" href="flights.html" style="color: black">Book Flights</a>
+              </div>
+            </div></li>
+            <li class="nav-item"> <a class="nav-link" href="contactUs.html">Contact us</a></li>
+
+          </ul>
+        </div>
+      </nav>
+
+
+      <div class="slider row">
+
+        <div id="carouselSlideShow" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselSlideShow" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselSlideShow" data-slide-to="1"></li>
+            <li data-target="#carouselSlideShow" data-slide-to="2"></li>
+            <li data-target="#carouselSlideShow" data-slide-to="3"></li>
+
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/home4.jpg" class="d-block w-100" alt="Still loading">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Statue Of Liberty</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="images/home2.jpg" class="d-block w-100" alt="Still loading">
+              <div class="carousel-caption d-none d-md-block">
+                <h4>Beautiful Earth</h4>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="images/home3.jpg" class="d-block w-100" alt="Still loading">
+              <div class="carousel-caption d-none d-md-block">
+                <h4>Night View</h4>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="images/tower.jpg" class="d-block w-100" alt="Still loading">
+              <div class="carousel-caption d-none d-md-block">
+                <h4>Canadian National Tower</h4>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselSlideShow" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+          <a class="carousel-control-next" href="#carouselSlideShow" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div><br><br>
+      <div class="row" >
+
+        <div  class="col-sm-12"style="text-align:center;">
+            <h2>Let's Find out your Destinations</h2>
+            <h4>We will help you to choose that</h4>
+        </div>
+
+        </div>
+      <div class="fluid-container">
+      <div class="row" >
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card ">
+            <img src="images/img123.jpg" class="card-img-top" alt="Wait">
+            <div class="card-body">
+              <h5 class="card-title">Welcome</h5>
+              <p class="card-text">Wecome Aboard! We are here to provide you the best experience </p>
+              <a href="hotels.html" class="btn btn-outline-success">What's new</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+
+          <div class="card ">
+            <img src="images/img12.jpg" class="card-img-top" alt="wait" >
+            <div class="card-body">
+              <h5 class="card-title">Discover</h5>
+              <p class="card-text">Let's discover the fantastic destinations with Us!</p>
+              <a href="packageBooking.html" class="btn btn-outline-success">New destinations</a>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+
+          <div class="card">
+            <img src="images/imgn.jpg" class="card-img-top" alt="wait">
+            <div class="card-body">
+              <h5 class="card-title">Enjoy</h5>
+              <p class="card-text">We guarantee that you will definietly enjoy with Us</p>
+              <a href="flights.html" class="btn btn-outline-success">Lets travel</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+
+          <div class="card">
+            <img src="images/img4.jpg" class="card-img-top" alt="wait" id="d1">
+            <div class="card-body">
+              <h5 class="card-title">Explore Nature</h5>
+              <p class="card-text">Feel the nature to nurture your soul and get delighted</p>
+              <a href="trains.hmtl" class="btn btn-outline-success">Feel Yourself</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      </div>
+      <footer> follow us on :
+            <a href="https://www.facebook.com/rakeshkumar" class="fa fa-facebook"></a>
+            <a href="https://www.twitter.com/@rakesh25948380" class="fa fa-twitter"></a>
+            <a href="https://www.linkedin.com/in/rakesh-kumar-na-b20b45194/" class="fa fa-linkedin"></a>
+            <a href="https://www.instagram.com/?hl=en" class="fa fa-instagram"></a><br>
+
+            &copy; Copyright 2020. All Rights Reserved.<br>
+
+      </footer>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <script src="https://use.fontawesome.com/3d7be19efc.js"></script>
+
+      <script type="text/javascript">
+
+
+      let openRequest = indexedDB.open("project", 1);
+      openRequest.onupgradeneeded = function() {
+
+        let db = openRequest.result;
+        if (!db.objectStoreNames.contains('package')) {
+          db.createObjectStore('package', {keyPath: "country"});
+        }
+
+        if (!db.objectStoreNames.contains('allUsersData')) {
+          db.createObjectStore('allUsersData', {keyPath: "username"});
+        }
+
+
+        if (!db.objectStoreNames.contains('LogInUser')) {
+          db.createObjectStore('LogInUser', {keyPath: "k"});
+        }
+
+
+
+
+      };
+
+
+      openRequest.onsuccess = function(){
+
+          db = openRequest.result;
+          db.onversionchange = function() { db.close(); };
+
+          let transaction = db.transaction("package", "readwrite");
+          let package_table = transaction.objectStore("package");
+
+          let transaction2 = db.transaction("LogInUser", "readwrite");
+          let logInUser = transaction2.objectStore("LogInUser");
+
+          logInUser.add({k: "UN", v: ""});
+
+          let singapore = {
+          country: 'Singapore',
+          five_days: {price: "$5000", days: "3" , description: " " },
+          ten_days: {price: "$7000", days: "5" , description: " "}
+
+        };
+
+
+        let england = {
+        country: 'england',
+        five_days: {price: "$2000", days: "4" , description: "  " },
+        ten_days: {price: "$6000", days: "12" , description: " "}
+
+      };
+
+      let berlin = {
+      country: 'Berlin',
+      five_days: {price: "$2300", days: "4" , description: " " },
+      ten_days: {price: "$6000", days: "12" , description: " "}
+      };
+
+
+
+
+      var dataToStore = [india, dubai, paris];
+
+
+      for(let i = 0 ; i < dataToStore.length ; i++){
+
+        var request = package_table.add(dataToStore[i]);
+
+        request.onsuccess = function() { console.log("db initialised"); };
+
+      }
+
+      };
+
+
+      </script>
+      <script type="text/javascript" src="scripts/dbScript.js"></script>
+        <script src="scripts/script.js"></script>
+  </body>
+</html>

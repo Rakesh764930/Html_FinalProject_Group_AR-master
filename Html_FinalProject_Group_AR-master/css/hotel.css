@@ -1,0 +1,18 @@
+body{
+
+  font-family: Times;
+  background-image: url('../images/ht1.jpg');
+  height: 70%;
+}
+h3{
+  margin-left: 20%;
+}
+form{
+  border: 1px solid green;
+  width: 30%;
+  background: green;
+  color: white;
+}
+button{
+  text-align: center;
+}

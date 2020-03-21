@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flights</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/flight.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="top-bar">
+        <div class="row">
+          <ul class="list-group list-group-horizontal" id="signList">
+
+            <li id="signin" class="list-group-item"><a href="login.html">Sign In</a></li>
+            <li id="mylist" class="list-group-item"><a href="myList.html">My List</a></li>
+            <li id="signout" class="list-group-item"><a href="index.html" onclick="signOut()">Sign Out</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuItems" aria-controls="secondNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuItems">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" > <a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"> <a class="nav-link" href="aboutUs.html">About us</a></li>
+
+            <li class="nav-item"> <div class="dropdown">
+              <!-- service submenu -->
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="hotels.html" style="color: black">Book  Hotels </a>
+                <a class="dropdown-item" href="flights.html" style="color: black">Book Flights</a>
+              </div>
+            </div></li>
+            <li class="nav-item"> <a class="nav-link" href="contactUs.html">Contact us</a></li>
+
+          </ul>
+        </div>
+      </nav>
+
+      <div class="flights-container">
+        <div class="banner">
+          <img src="images/plane.jpg" alt="">
+
+        </div>
+        <div class="flights-form">
+          <div class="flight-options">
+            <button type="button" id="btn-one-way">One-way</button>
+            <button type="button" name="button" id="btn-round-trip">Round Trip</button>
+
+
+          </div>
+          <div class="form">
+            <div class="form-group">
+              <label for="uname">From:</label>
+              <input type="text" class="form-control" id="origin"  required>
+              <div class="valid-feedback">Valid.</div>
+
+            </div>
+            <div class="form-group">
+              <label for="uname">To:</label>
+              <input type="text" class="form-control" id="destination" placeholder="Destination city" required>
+              <div class="valid-feedback">Valid.</div>
+
+            </div>
+            <div class="dates">
+              <div class="form-group depart-date">
+                <label for="depart">Departing:</label>
+                <input type="date" class="form-control" id="travelDate" required>
+              <div class="valid-feedback">Valid.</div>
+              </div>
+              <div class="form-group return-date">
+                <label for="return">Returning:</label>
+                <input type="date" class="form-control" id="returningDate" required>
+              <div class="valid-feedback">Valid.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="uname">Passengers:</label>
+              <input id="total_pass" type="text" class="form-control" required>
+
+
+            </div>
+            <button type="button" name="button" id="btn-flight" onclick="saveData()">Book </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer> follow us on :
+          <a href="https://www.facebook.com/rakeshkumar" class="fa fa-facebook"></a>
+          <a href="https://www.twitter.com/@rakesh25948380" class="fa fa-twitter"></a>
+          <a href="https://www.linkedin.com/in/rakesh-kumar-na-b20b45194/" class="fa fa-linkedin"></a>
+          <a href="https://www.instagram.com/?hl=en" class="fa fa-instagram"></a><br>
+
+          &copy; Copyright 2020. All Rights Reserved.<br>
+
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/3d7be19efc.js"></script>
+    <script>
+
+        // your script function
+        function saveData(){
+
+
+
+          var a = document.getElementById('origin').value;
+          var b = document.getElementById('destination').value;
+          var c = document.getElementById('travelDate').value;
+          var d = document.getElementById('returningDate').value;
+          var e = document.getElementById("total_pass").value;
+
+
+
+
+
+          var data = {
+
+            Service_Name : " Booking Flight",
+            Details : "Gulf Air " + ("\nFrom: " + a + "To:" + b),
+            person : e,
+            Duration : (c + " - " + d),
+            Price : "CAD $ 500",
+            Service_Booking_Date : new Date()
+          }
+
+          let openRequest = indexedDB.open("project", 1);
+          var db;
+
+          openRequest.onsuccess = function() { console.log("success");
+
+              db = openRequest.result;
+              db.onversionchange = function() { db.close(); };
+
+
+              let transaction2 = db.transaction("LogInUser", "readwrite");
+              let logInUser = transaction2.objectStore("LogInUser");
+
+              var r = logInUser.get("UN");
+              r.onsuccess = function() {
+
+                var unObject = r.result;
+                console.log(unObject);
+                var currentUser = unObject.v;
+
+                if (currentUser == ""){
+                  alert("To avail the services you need to login with us")
+                  window.location.href = "login.html";
+                }else{
+                  let transaction = db.transaction("allUsersData", "readwrite");
+                  let allRequests = transaction.objectStore("allUsersData");
+                  var req = allRequests.get(currentUser);
+
+                        req.onsuccess = function() {
+
+                        var userObject = req.result;
+
+                        var reqArray = userObject.requestsList;
+
+                        reqArray.push(data);
+
+
+
+                        var updatedInfo = {
+                          username: userObject.username,
+                          password: userObject.password,
+                          fullName: userObject.fullName,
+                          email: userObject.email,
+                          requestsList: reqArray
+                        };
+                        allRequests.put(updatedInfo);
+                        alert("Booked successfully"); };
+                }
+
+
+              };
+            }
+        }
+
+
+
+
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/3d7be19efc.js"></script>
+    <script type="text/javascript">
+
+    document.getElementById('btn-one-way').addEventListener('click', function(){
+      let departDate = document.getElementsByClassName('depart-date')[0];
+      departDate.style.width = "100%";
+      let returnDate = document.getElementsByClassName('return-date')[0];
+      returnDate.style.display = "none";
+
+    });
+
+    document.getElementById('btn-round-trip').addEventListener('click', function(){
+      let departDate = document.getElementsByClassName('depart-date')[0];
+      departDate.style.width = "47%";
+      let returnDate = document.getElementsByClassName('return-date')[0];
+      returnDate.style.display = "inline-block";
+
+    });
+
+    </script>
+    <script type="text/javascript" src="scripts/dbScript.js"></script>
+
+  </body>
+</html>

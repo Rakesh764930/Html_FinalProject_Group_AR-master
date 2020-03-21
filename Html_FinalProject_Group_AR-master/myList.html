@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name= "viewport" content="width=device-width , initial-scale=1.0">
+    <title>Project</title>
+  <link rel="stylesheet" href="css/home.css">
+
+    <script src="https://use.fontawesome.com/3d7be19efc.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body >
+
+    <div class="container-fluid">
+
+      <div class="top-bar">
+        <div class="row">
+          <ul class="list-group list-group-horizontal" id="signList">
+
+            <li id="signin" class="list-group-item"><a href="login.html">Sign In</a></li>
+            <li id="mylist" class="list-group-item"><a href="myList.html">My List</a></li>
+            <li id="signout" class="list-group-item"><a href="index.html" onclick="signOut()">Sign Out</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuItems" aria-controls="secondNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuItems">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" > <a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"> <a class="nav-link" href="aboutUs.html">About us</a></li>
+
+            <li class="nav-item"> <div class="dropdown">
+              <!-- service submenu -->
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="hotels.html" style="color: black">Book  Hotels </a>
+                <a class="dropdown-item" href="flights.html" style="color: black">Book Flights</a>
+              </div>
+            </div></li>
+            <li class="nav-item"> <a class="nav-link" href="contactUs.html">Contact us</a></li>
+
+          </ul>
+        </div>
+      </nav>
+
+<h2>My Requests List</h2>
+
+<section style="border:1px solid green">
+
+<ul id="list"></ul>
+
+</section>
+
+<br><br>
+<footer> follow us on :
+      <a href="https://www.facebook.com/rakeshkumar" class="fa fa-facebook"></a>
+      <a href="https://www.twitter.com/@rakesh25948380" class="fa fa-twitter"></a>
+      <a href="https://www.linkedin.com/in/rakesh-kumar-na-b20b45194/" class="fa fa-linkedin"></a>
+      <a href="https://www.instagram.com/?hl=en" class="fa fa-instagram"></a><br>
+
+      &copy; Copyright 2020. All Rights Reserved.<br>
+
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/3d7be19efc.js"></script>
+
+<script>
+
+  var list = document.getElementById("list");
+    let openRequest = indexedDB.open("project", 1);
+    var db;
+    openRequest.onsuccess = function() {
+
+        db = openRequest.result;
+        db.onversionchange = function() { db.close(); };
+
+        let transaction2 = db.transaction("LogInUser", "readwrite");
+        let logInUser = transaction2.objectStore("LogInUser");
+
+        var r = logInUser.get("UN");
+        r.onsuccess = function() {
+
+
+          var unObject = r.result;
+          console.log(unObject);
+          var currentUser = unObject.v;
+
+          let transaction = db.transaction("allUsersData", "readwrite");
+          let allRequests = transaction.objectStore("allUsersData");
+          var req = allRequests.get(currentUser);
+
+                req.onsuccess = function() {
+
+
+                var userObject = req.result;
+
+                var reqArray = userObject.requestsList;
+                console.log(reqArray);
+
+
+
+            for(let i=0;  i<reqArray.length; i++){
+
+              var li = document.createElement("li");
+              li.setAttribute("class","history");
+
+
+              var s = "Service Name: <b>" + reqArray[i].Service_Name + "</b><br>";
+              s += "Details: <i>" + reqArray[i].Details + "</i><br>";
+              s += "person: " + reqArray[i].person + "<br>";
+              s += "Duration: " + reqArray[i].Duration + "<br>";
+              s += "Price: <b>" + reqArray[i].Price + "</b><br>";
+              s += "Service Booking Date: " + reqArray[i].Service_Booking_Date + "<br><br>";
+
+              li.innerHTML= s;
+                list.appendChild(li);
+            }
+
+
+         };
+      };
+};
+
+
+
+
+</script>
+<script type="text/javascript" src="scripts/dbScript.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,33 @@
+.map-container-section {
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+}
+h3{
+  margin-left: 3%;
+}
+h2{
+  font-style: italic;
+  color: #4d4d4d;
+}
+.card-body{
+  color: white;
+  background: green;
+}
+.btn .btn-outline-success{
+  color: white;
+}
+.map-container-section iframe {
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+.row .text-center .col-md-4{
+border-radius: 5px;
+  background: green;
+  color: white;
+
+}

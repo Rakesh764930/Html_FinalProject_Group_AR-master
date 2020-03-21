@@ -1,0 +1,12 @@
+body{
+
+  font-family: Times;
+  background-image: url('../images/ft1.jpg');
+}
+.flights-form{
+  border: 1px solid green;
+  color: white;
+  margin-bottom: 10px;
+margin-left: 2%;
+  width: 30%;
+}

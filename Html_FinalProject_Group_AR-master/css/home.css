@@ -1,0 +1,109 @@
+body{
+  font-family: Times;
+}
+.container-fluid{
+  padding: 0px;
+ }
+.top-bar .row {
+    margin: 0;
+    float: right;
+}
+.top-bar .list-group-item {
+    border: none;
+    background: red;
+    padding: 0.2rem 1.25rem;
+    font-size: 15px;
+}
+#signList li a{
+  color: white;
+  text-decoration: none;
+}
+#signList li a:hover{
+  color: black;
+}
+.navbar{
+  background: green;
+clear: both;
+
+}
+
+#menuItems ul li a{
+   color: white;
+}
+#menuItems ul li a:hover{
+  color: pink;
+}
+
+#dropdownMenuButton{
+  color: white;
+}
+#dropdownMenuButton:hover{
+  color: pink;
+}
+
+.fluid-container{
+  margin: 5% 0.5%;
+  margin-right: 5%;
+}
+.fluid-container .card{
+  width: 18rem;
+  margin-left: 10%;
+
+}
+
+
+#d1{
+  margin-top: 5px;
+}
+.slider.row {
+    margin: 0;
+}
+
+
+footer{
+  background: #4d4d4c;
+  text-align: center;
+  color: white
+}
+footer a{
+
+  text-align: center;
+
+}
+}
+
+
+.fa:hover {
+
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 50px;
+border-radius: 30%;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
